@@ -21,9 +21,14 @@ bzip2 -d $FILENAME
 
 cd ..
 
+kill $(pgrep mongo)
+
 mongod --dbpath ./flightData &
+echo "Waiting for mongo to start..."
+sleep 2
+echo "Starting import"
 mongoimport --db flightData --collection flightcollection --type csv --headerline --drop --file $CSV
 
-rm $CSV
+# rm $CSV
 
 kill $(pgrep mongo)
