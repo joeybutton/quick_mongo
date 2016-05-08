@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Location to store the file (Current DIR)
+FILENAME=2008.csv.bz2
+
+CSV=./flightData/2008.csv
+
+# Place to go get the data from
+
+# This is the original source, I am mirroring on Basin
+# URL=http://stat-computing.org/dataexpo/2009/2008.csv.bz2
+URL=http://www.cs.middlebury.edu/~jbutton/InfoVisData/2008.csv.bz2
+
+cd flightData
+
+wget $URL -O $FILENAME
+
+echo "Finished downloading, now extracting..."
+
+bzip2 -d $FILENAME
+
+cd ..
+
+mongod --dbpath ./flightData &
+mongoimport --db flightData --collection flightcollection --type csv --headerline --drop --file $CSV
+
+rm $CSV
+
+kill $(pgrep mongo)
