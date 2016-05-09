@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "mongod --dbpath ./flightData",
-    "start": "node src/server.js & mongod --dbpath ./flightData --smallfiles >  /dev/null 2>&1",
+    "start": "nodejs src/server.js & mongod --dbpath ./flightData --smallfiles >  /dev/null 2>&1",
     "database": "mongod --dbpath ./flightData"
   },
   "repository": {
