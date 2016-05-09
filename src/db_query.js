@@ -6,6 +6,7 @@ module.exports = function (database) {
 		the desired flights
 		*/
 		return new Promise(function (resolve, reject) {
+			console.log("inside promise for DB: ", request);
 			var flightQuery = {};
 			var objectKeys = ["Year", "Month", "DayofMonth", "DayOfWeek",
 									"DepTime", "CRSDepTime", "ArrTime",

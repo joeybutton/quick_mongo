@@ -28,11 +28,12 @@ module.exports = function (testing) {
 
 		// Request headers you wish to allow
 		res.setHeader('Access-Control-Allow-Headers', 'Content-Type,application/json;charset=UTF-8');
-
+		next();
 	});
 
 	app.post('/data', function (req, res) {
 		//This should handle all requests to get data
+		console.log(req.body);
 		db_api.find(req.body)
 			.then(function (response) {
 				res.send(response);
