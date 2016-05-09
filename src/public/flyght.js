@@ -28,6 +28,7 @@ var getflights = function (data) {
 
 		request.open('POST', '/data', true);
 		request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		console.log("Passing data to server: ", JSON.stringify(data));
 		request.send(JSON.stringify(data));
 
 

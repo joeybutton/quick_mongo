@@ -5,6 +5,7 @@ module.exports = function (testing) {
 	var mongo = require('mongodb');
 	var monk = require('monk');
 	var path = require('path');
+	var bodyParser = require('body-parser');
 
 	//This is the interface with the DB
 	var db = monk('localhost:27017/flightData');
@@ -13,11 +14,12 @@ module.exports = function (testing) {
 
 	app.use(express.static(path.join(__dirname, 'public')));
 
-	app.get('/data', function (req, res) {
+	app.use(bodyParser.urlencoded({ extended: false }));
+	app.use(bodyParser.json());
 
+	app.post('/data', function (req, res) {
 		//This should handle all requests to get data
-		console.log(req.query);
-		db_api.find(req.data)
+		db_api.find(req.body)
 			.then(function (response) {
 				res.send(response);
 			});
