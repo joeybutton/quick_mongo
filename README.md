@@ -1,6 +1,8 @@
 # flyght
 InfoVis Final Project data server
 
+Dependencies: node, npm, mongodb
+
 To download the flight data and populate the server, run:
 
 **NOTE--** *This will take up to 12GBs of space*
