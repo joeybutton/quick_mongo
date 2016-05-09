@@ -10,7 +10,7 @@ module.exports = function (testing) {
 	//This is the interface with the DB
 	var db = monk('localhost:27017/mongoData');
 
-	var db_api = require('./db_query')(db.get('flightcollection'));
+	var db_api = require('./db_query')(db.get('datacollection'));
 
 	app.use(express.static(path.join(__dirname, 'public')));
 

@@ -1,23 +1,18 @@
 #!/bin/sh
 
 # Location to store the file (Current DIR)
-FILENAME=2008.csv.bz2
-
-CSV=./mongoData/2008.csv
+CSV=dataFile.csv
 
 # Place to go get the data from
-
-# This is the original source, I am mirroring on Basin
-# URL=http://stat-computing.org/dataexpo/2009/2008.csv.bz2
-URL=http://www.cs.middlebury.edu/~jbutton/InfoVisData/2008.csv.bz2
+echo "Please enter the URL of your data CSV file: "
+read URL
 
 cd mongoData
 
-wget $URL -O $FILENAME
+wget $URL -O $CSV
 
-echo "Finished downloading, now extracting..."
+echo "Finished downloading, now populating mongoDB"
 
-bzip2 -d $FILENAME
 
 cd ..
 
@@ -25,9 +20,9 @@ kill $(pgrep mongo)
 
 mongod --dbpath ./mongoData &
 echo "Waiting for mongo to start..."
-sleep 2
+sleep 5
 echo "Starting import"
-mongoimport --db mongoData --collection flightcollection --type csv --headerline --drop --file $CSV
+mongoimport --db mongoData --collection datacollection --type csv --headerline --drop --file $CSV
 
 # rm $CSV
 
