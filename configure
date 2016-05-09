@@ -22,8 +22,10 @@ mongod --dbpath ./mongoData &
 echo "Waiting for mongo to start..."
 sleep 5
 echo "Starting import"
-mongoimport --db mongoData --collection datacollection --type csv --headerline --drop --file $CSV
+mongoimport --db mongoData --collection datacollection --type csv --headerline --drop --file ./mongoData/$CSV
 
-# rm $CSV
+rm $CSV
+
+
 
 kill $(pgrep mongo)
