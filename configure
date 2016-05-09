@@ -3,7 +3,7 @@
 # Location to store the file (Current DIR)
 FILENAME=2008.csv.bz2
 
-CSV=./flightData/2008.csv
+CSV=./mongoData/2008.csv
 
 # Place to go get the data from
 
@@ -11,7 +11,7 @@ CSV=./flightData/2008.csv
 # URL=http://stat-computing.org/dataexpo/2009/2008.csv.bz2
 URL=http://www.cs.middlebury.edu/~jbutton/InfoVisData/2008.csv.bz2
 
-cd flightData
+cd mongoData
 
 wget $URL -O $FILENAME
 
@@ -23,11 +23,11 @@ cd ..
 
 kill $(pgrep mongo)
 
-mongod --dbpath ./flightData &
+mongod --dbpath ./mongoData &
 echo "Waiting for mongo to start..."
 sleep 2
 echo "Starting import"
-mongoimport --db flightData --collection flightcollection --type csv --headerline --drop --file $CSV
+mongoimport --db mongoData --collection flightcollection --type csv --headerline --drop --file $CSV
 
 # rm $CSV
 

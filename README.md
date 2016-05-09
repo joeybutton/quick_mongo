@@ -1,15 +1,13 @@
-# flyght
-InfoVis Final Project data server
+# Quick Mongo
+A quick setup tool for going from CSV to a restful Node/Mongo server in minutes
 
-Dependencies: node, npm, mongodb
+Dependencies: node, npm, mongodb, python
 
-To download the flight data and populate the server, run:
-
-**NOTE--** *This will take up to 12GBs of space*
+To download the your data and populate the server, run:
 
     ./configure
 
-To Download dependencies:
+To download node dependencies:
 
  	npm install
 

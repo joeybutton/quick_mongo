@@ -1,7 +1,7 @@
 {
-	"name": "flyght",
+	"name": "csv_2_quick_mongo",
 	"version": "0.0.1",
-	"description": "Flight Visualization server",
+	"description": "Quick setup repo for creating a mongo data server",
 	"main": "src/server.js",
 	"dependencies": {
 		"body-parser": "^1.15.1",
@@ -12,18 +12,18 @@
 		"path": "^0.12.7"
 	},
 	"scripts": {
-		"test": "mongod --dbpath ./flightData",
-		"start": "node src/server.js & mongod --dbpath ./flightData --smallfiles >  /dev/null 2>&1",
-		"database": "mongod --dbpath ./flightData"
+		"test": "mongod --dbpath ./mongoData",
+		"start": "node src/server.js & mongod --dbpath ./mongoData --smallfiles >  /dev/null 2>&1",
+		"database": "mongod --dbpath ./mongoData"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/joeybutton/flyght.git"
+		"url": "git+https://github.com/joeybutton/quick_mongo.git"
 	},
-	"author": "Joey Button and Marisa Dreher",
+	"author": "Joey Button",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/joeybutton/flyght/issues"
+		"url": "https://github.com/joeybutton/quick_mongo/issues"
 	},
-	"homepage": "https://github.com/joeybutton/flyght#readme"
+	"homepage": "https://github.com/joeybutton/quick_mongo#readme"
 }

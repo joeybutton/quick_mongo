@@ -8,7 +8,7 @@ module.exports = function (testing) {
 	var bodyParser = require('body-parser');
 
 	//This is the interface with the DB
-	var db = monk('localhost:27017/flightData');
+	var db = monk('localhost:27017/mongoData');
 
 	var db_api = require('./db_query')(db.get('flightcollection'));
 
