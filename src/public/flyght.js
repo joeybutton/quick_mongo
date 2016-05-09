@@ -35,4 +35,12 @@ var getflights = function (data) {
 	});
 };
 
+var flights;
+
 console.log("The end of the script");
+
+getflights({ "Origin": "IAD", "Dest": "TPA" })
+	.then(function (res) {
+		console.log(res);
+		flights = res;
+	});
