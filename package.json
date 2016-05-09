@@ -1,29 +1,29 @@
 {
-  "name": "flyght",
-  "version": "0.0.1",
-  "description": "Flight Visualization server",
-  "main": "src/server.js",
-  "dependencies": {
-    "body-parser": "^1.15.1",
-    "debug": "^2.2.0",
-    "express": "^4.13.4",
-    "mongodb": "^2.1.18",
-    "monk": "^1.0.1",
-    "path": "^0.12.7"
-  },
-  "scripts": {
-    "test": "mongod --dbpath ./flightData",
-    "start": "nodejs src/server.js & mongod --dbpath ./flightData --smallfiles >  /dev/null 2>&1",
-    "database": "mongod --dbpath ./flightData"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joeybutton/flyght.git"
-  },
-  "author": "Joey Button and Marisa Dreher",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/joeybutton/flyght/issues"
-  },
-  "homepage": "https://github.com/joeybutton/flyght#readme"
+	"name": "flyght",
+	"version": "0.0.1",
+	"description": "Flight Visualization server",
+	"main": "src/server.js",
+	"dependencies": {
+		"body-parser": "^1.15.1",
+		"debug": "^2.2.0",
+		"express": "^4.13.4",
+		"mongodb": "^2.1.18",
+		"monk": "^1.0.1",
+		"path": "^0.12.7"
+	},
+	"scripts": {
+		"test": "mongod --dbpath ./flightData",
+		"start": "node src/server.js & mongod --dbpath ./flightData --smallfiles >  /dev/null 2>&1",
+		"database": "mongod --dbpath ./flightData"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joeybutton/flyght.git"
+	},
+	"author": "Joey Button and Marisa Dreher",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/joeybutton/flyght/issues"
+	},
+	"homepage": "https://github.com/joeybutton/flyght#readme"
 }

@@ -26,7 +26,7 @@ var getflights = function (data) {
 			reject(Error("Network error"));
 		});
 
-		request.open('POST', '/data', true);
+		request.open('POST', 'http://104.196.139.40/data', true);
 		request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 		console.log("Passing data to server: ", JSON.stringify(data));
 		request.send(JSON.stringify(data));
