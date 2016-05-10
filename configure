@@ -1,5 +1,13 @@
 #!/bin/sh
 
+#check the depndencies
+
+command -v mongod >/dev/null 2>&1 || { echo >&2 "This script requires mongodb, please install and then try again."; exit 1; }
+
+command -v npm >/dev/null 2>&1 || { echo >&2 "Quick-Mongo requires npm to work properly, please install before continuing."; exit 1; }
+
+
+
 # Location to store the file (Current DIR)
 CSV=dataFile.csv
 
